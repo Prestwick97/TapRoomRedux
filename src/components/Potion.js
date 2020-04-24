@@ -16,7 +16,7 @@ function Potion(props){
 Potion.propTypes = {
   name: PropTypes.string,
   effect: PropTypes.string,
-  price: PropTypes.int,
+  price: PropTypes.number,
   id: PropTypes.string,
   whenPotionClicked: PropTypes.func
 };
