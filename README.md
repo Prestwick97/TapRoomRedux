@@ -14,7 +14,7 @@ _This application allows the user to add, remove, view, and update different pot
 	* Input: Draft list: potion 1 *add potion to draft list* 
 	* Output: Draft list: Potion 1, potion 2.
 
-![] (./src/img/tree.png)
+![component tree](img/tree.png)
 ## Setup/Installation Requirements
 
 * _navigate to your desktop directory using your terminal: `cd desktop`._
