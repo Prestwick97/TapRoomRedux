@@ -1,7 +1,9 @@
 import React from 'react';
 import NewPotionForm from './NewPotionForm';
 import PotionList from './PotionList';
+import Proptypes from 'prop-types';
 import PotionDetail from './PotionDetail';
+import EditPotionForm from './EditPotionForm';
 
 class PotionControl extends React.Component {
 
@@ -10,7 +12,8 @@ class PotionControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterPotionlList: [],
-      selectedPotion: null
+      selectedPotion: null,
+      editing: false
     };
   }
 
@@ -35,7 +38,8 @@ class PotionControl extends React.Component {
     if (this.state.selectedPotion != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedPotion: null
+        selectedPotion: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
@@ -43,7 +47,10 @@ class PotionControl extends React.Component {
       }));
     }
   }
-
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({ editing: true });
+  };
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
