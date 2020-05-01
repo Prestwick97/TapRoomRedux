@@ -16,7 +16,21 @@ class PotionControl extends React.Component {
       editing: false
     };
   }
-
+  
+  handleClick = () => {
+    if (this.state.selectedPotion != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedPotion: null,
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  }
+  
   handleAddingNewPotionToList = (newPotion) => {
     const newMasterPotionList = this.state.masterPotionList.concat(newPotion);
     this.setState({masterPotionList: newMasterPotionList});
@@ -34,19 +48,6 @@ class PotionControl extends React.Component {
     this.setState({selectedPotion: null});
   }
 
-  handleClick = () => {
-    if (this.state.selectedPotion != null) {
-      this.setState({
-        formVisibleOnPage: false,
-        selectedPotion: null,
-        editing: false
-      });
-    } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
-    }
-  }
   handleEditClick = () => {
     console.log("handleEditClick reached!");
     this.setState({ editing: true });
