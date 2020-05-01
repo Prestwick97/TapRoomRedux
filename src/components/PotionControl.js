@@ -58,6 +58,11 @@ class PotionControl extends React.Component {
     if(this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewPotionForm onNewPotion={this.handleAddingNewPotionToList} />;
       buttonTest = "Return to potion draft list";
+    } else if(this.state.formVisibleOnPage === false && this.state.selectedPotion === null){
+      currentlyVisibleState = <PotionList potionList={this.state.masterPotionList}
+      onPotionSelection={this.handleChangingSelectedPotion}
+      onClickingDelete={this.handleDeletingPotion} />;
+      buttonText = "Add new potion";
     }
     // if (this.state.selectedpotion != null) {
     //   currentlyVisibleState = <PotionDetail potion = {this.state.selectedPotion} onClickingDelete = {this.handleDeletingPotion} />
