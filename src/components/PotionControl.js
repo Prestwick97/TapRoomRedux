@@ -55,6 +55,9 @@ class PotionControl extends React.Component {
     const selectedPotion = this.state.masterPotionList.filter(potion => potion.id === id) [0];
     const updatedPotion = {...selectedPotion, pints : selectedPotion.pints-1}
     const nonUpdatedPotions = this.state.masterPotionList.filter(potion => potion.id !== id);
+    if(selectedPotion.pints<=0){
+      return 0;
+    }
     this.setState({masterPotionList: [...nonUpdatedPotions, updatedPotion]});
   }
 
