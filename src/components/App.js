@@ -8,7 +8,7 @@ function App() {
       <Header />
       <PotionControl />
     </React.Fragment>
-  )
+  );
 }
 
 export default App;

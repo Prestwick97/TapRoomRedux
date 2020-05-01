@@ -1,9 +1,9 @@
 import React from 'react';
 import NewPotionForm from './NewPotionForm';
 import PotionList from './PotionList';
-import Proptypes from 'prop-types';
+// import Proptypes from 'prop-types';
 import PotionDetail from './PotionDetail';
-import EditPotionForm from './EditPotionForm';
+// import EditPotionForm from './EditPotionForm';
 
 class PotionControl extends React.Component {
 
@@ -55,19 +55,12 @@ class PotionControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.editing) {
-      currentlyVisibleState = (
-        <EditPotionForm potiont={this.state.selectedPotion} onEditPotion={this.handleEditingPotionInList} />
-      );
+    if (this.state.selectedpotion != null) {
+      currentlyVisibleState = <PotionDetail potion = {this.state.selectedPotion} onClickingDelete = {this.handleDeletingPotion} />
       buttonText = "Return to Potion List";
-    } else if (this.state.selectedPotion != null) {
-      currentlyVisibleState = (
-        <PotionDetail
-          potion={this.state.selectedPotion}
-          onClickingDelete={this.handleDeletingPotion}
-          onClickingEdit={this.handleEditClick}
-        />
-      );
+    }
+    else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotionToList} />;
       buttonText = "Return to Potion List";
     } else {
       currentlyVisibleState = <PotionList potionList={this.state.masterPotionList} onPotionSelection={this.handleChangingSelectedPotion} />;

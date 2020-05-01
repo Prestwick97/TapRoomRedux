@@ -5,7 +5,8 @@ function Potion(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenPotionClicked(props.id)}>
-        <h3>{props.effect} - {props.name}</h3>
+        <p>{props.name}</p>
+        <p>{props.effect}</p>
         <p><em>{props.price}</em></p>
         <hr/>
       </div>
