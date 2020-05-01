@@ -43,10 +43,10 @@ class PotionControl extends React.Component {
 
   handleDeletingPotion = (id) => {
     const newMasterPotionList = this.state.masterPotionList.filter(potion => potion.id !== id);
-    this.setState({masterPotionList: newMasterPotionList});
-    this.setState({selectedPotion: null});
+    this.setState({masterPotionList: newMasterPotionList, selectedPotion: null});
   }
 
+  
   handleEditClick = () => {
     console.log("handleEditClick reached!");
     this.setState({ editing: true });
