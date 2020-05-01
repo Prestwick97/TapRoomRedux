@@ -10,7 +10,7 @@ function Potionlist(props){
     {props.potionList.map((potion) =>
       <Potion 
         whenPotionClicked = { props.onPotionSelection }
-        names={potion.name}
+        name={potion.name}
         location={potion.effect}
         issue={potion.price}
         id={potion.id}

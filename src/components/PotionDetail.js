@@ -1,5 +1,3 @@
-export default PotionDetail;
-
 import React from "react";
 import PropTypes from "prop-types";
 
