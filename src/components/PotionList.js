@@ -8,6 +8,7 @@ function Potionlist(props){
     <React.Fragment>
     <hr/>
     {props.potionList.map((potion) => (
+      <div>
       <Potion 
         whenPotionClicked = { props.onPotionSelection }
         name={potion.name}
@@ -17,6 +18,7 @@ function Potionlist(props){
         id={potion.id}
         key={potion.id}/>
         <button onClick={() => props.onSellPint(potion.id)}>Sell Pint</button>
+        </div>
       ))}
     </React.Fragment>
   );
