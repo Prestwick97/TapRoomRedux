@@ -30,11 +30,10 @@ class PotionControl extends React.Component {
       }));
     }
   }
-  
+
   handleAddingNewPotionToList = (newPotion) => {
     const newMasterPotionList = this.state.masterPotionList.concat(newPotion);
-    this.setState({masterPotionList: newMasterPotionList});
-    this.setState({formVisibleOnPage: false});
+    this.setState({masterPotionList: newMasterPotionList, formVisibleOnPage: false});
   }
 
   handleChangingSelectedPotion = (id) => {
