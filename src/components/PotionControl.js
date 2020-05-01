@@ -48,24 +48,28 @@ class PotionControl extends React.Component {
 
   
   handleEditClick = () => {
-    console.log("handleEditClick reached!");
     this.setState({ editing: true });
   };
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedpotion != null) {
-      currentlyVisibleState = <PotionDetail potion = {this.state.selectedPotion} onClickingDelete = {this.handleDeletingPotion} />
-      buttonText = "Return to Potion List";
+    if(this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewPotionForm onNewPotion={this.handleAddingNewPotionToList} />;
+      buttonTest = "Return to potion draft list";
     }
-    else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotionToList} />;
-      buttonText = "Return to Potion List";
-    } else {
-      currentlyVisibleState = <PotionList potionList={this.state.masterPotionList} onPotionSelection={this.handleChangingSelectedPotion} />;
-      buttonText = "Add Potion";
-    }
+    // if (this.state.selectedpotion != null) {
+    //   currentlyVisibleState = <PotionDetail potion = {this.state.selectedPotion} onClickingDelete = {this.handleDeletingPotion} />
+    //   buttonText = "Return to Potion List";
+    // }
+    // else if (this.state.formVisibleOnPage) {
+    //   currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotionToList} />;
+    //   buttonText = "Return to Potion List";
+    // } else {
+    //   currentlyVisibleState = <PotionList potionList={this.state.masterPotionList} onPotionSelection={this.handleChangingSelectedPotion} />;
+    //   buttonText = "Add Potion";
+    // }
     return (
       <React.Fragment>
         {currentlyVisibleState}
