@@ -37,8 +37,8 @@ class PotionControl extends React.Component {
   }
 
   handleChangingSelectedPotion = (id) => {
-    const selectedPotion = this.state.masterPotionList.filter(potion => potion.id ===id)[0];
-    this.setState({selectedPotion: selectedPotion});
+    const selectedPotion = this.state.masterPotionList.filter(potion => potion.id === id)[0];
+    this.setState({selectedPotion: selectedPotion, formVisibleOnPage:false});
   }
 
   handleDeletingPotion = (id) => {
