@@ -8,6 +8,7 @@ function Potion(props){
         <p>{props.name}</p>
         <p>{props.effect}</p>
         <p><em>{props.price}</em></p>
+        <p>{props.pints}</p>
         <hr/>
       </div>
     </React.Fragment>
@@ -19,6 +20,7 @@ Potion.propTypes = {
   effect: PropTypes.string,
   price: PropTypes.number,
   id: PropTypes.string,
+  pints: PropTypes.number,
   whenPotionClicked: PropTypes.func
 };
 

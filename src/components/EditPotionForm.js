@@ -8,7 +8,7 @@ function EditPotionForm(props) {
   function handleEditPotionFormSubmission(event) {
     event.preventDefault();
     props.onEditPotion({
-      names: event.target.name.value,
+      name: event.target.name.value,
       location: event.target.effect.value,
       issue: event.target.price.value,
       id: potion.id
@@ -16,9 +16,7 @@ function EditPotionForm(props) {
   }
 
   return (
-    <React.Fragment>
       <ReusableForm formSubmissionHandler={handleEditPotionFormSubmission} buttonText="Update Potion" />
-    </React.Fragment>
   );
 }
 

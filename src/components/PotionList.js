@@ -7,22 +7,26 @@ function Potionlist(props){
   return (
     <React.Fragment>
     <hr/>
-    {props.potionList.map((potion) =>
+    {props.potionList.map((potion) => (
       <Potion 
         whenPotionClicked = { props.onPotionSelection }
         name={potion.name}
-        location={potion.effect}
-        issue={potion.price}
+        effect={potion.effect}
+        price={potion.price}
+        pints={potion.pints}
         id={potion.id}
         key={potion.id}/>
-      )}
+        <button onClick={() => props.onSellPint(potion.id)}>Sell Pint</button>
+      ))}
     </React.Fragment>
   );
 }
 
 Potionlist.propTypes = {
-  potionlist: PropTypes.array,
-  onPotionSelection: PropTypes.func
+  potionList: PropTypes.array,
+  onPotionSelection: PropTypes.func,
+  onClickingDelete: PropTypes.func,
+  onSellPint: PropTypes.func
 };
 
 export default Potionlist;

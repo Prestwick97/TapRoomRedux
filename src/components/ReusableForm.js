@@ -11,7 +11,7 @@ function ReusableForm(props) {
           type='text' name='effect' placeholder='Effect' />
         <input
         type='number' name='price' placeholder='Price' />
-        <button type='submit'>{props.buttonText}</button>
+        <button type='submit'>Add new potion</button>
       </form>
     </React.Fragment>
   );
@@ -19,7 +19,6 @@ function ReusableForm(props) {
 
 ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
-  buttonText: PropTypes.string
 };
 
 export default ReusableForm;
