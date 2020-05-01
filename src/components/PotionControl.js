@@ -11,7 +11,7 @@ class PotionControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterPotionlList: [],
+      masterPotionList: [],
       selectedPotion: null,
       editing: false
     };
