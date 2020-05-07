@@ -2,6 +2,22 @@ import potionListReducer from '../../reducers/potion-list-reducer';
 
 describe('potionListReducer', () => {
   let action;
+
+  let action;
+
+  const currentState = {
+    1: {name:'Horror',
+    effect: 'Creazy nightmares',
+    price: 3,
+    pints: 30,
+    id: 1 },
+    2: {name:'Lustine',
+    effect: 'Creazy dreams',
+    price: 7,
+    pints: 30,
+    id: 2 }
+  }
+  
   const potionData = {
     name: "magic",
     effect: "Makes you giggle",
@@ -14,7 +30,7 @@ describe('potionListReducer', () => {
     expect(potionListReducer({}, { type: null })).toEqual({});
   });
 
-  test('Should successfully add new potion data to masterPotionList', () => {
+  test('Should successfully add new potion data to masterpotionList', () => {
     const { name, effect, pints, price } = potionData;
     action = {
       type: ADD_POTION,
@@ -27,9 +43,10 @@ describe('potionListReducer', () => {
 
     expect(potionListReducer({}, action)).toEqual({
       [id] : {
-        names: names,
-        location: location,
-        issue: issue,
+        name: name,
+        effect: effect,
+        pints: pints,
+        price: price,
         id: id
       }
     });
