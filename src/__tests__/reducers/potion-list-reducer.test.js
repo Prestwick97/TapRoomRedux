@@ -3,8 +3,6 @@ import potionListReducer from '../../reducers/potion-list-reducer';
 describe('potionListReducer', () => {
   let action;
 
-  let action;
-
   const currentState = {
     1: {name:'Horror',
     effect: 'Creazy nightmares',
@@ -31,7 +29,7 @@ describe('potionListReducer', () => {
   });
 
   test('Should successfully add new potion data to masterpotionList', () => {
-    const { name, effect, pints, price } = potionData;
+    const { name, effect, pints, price, id } = potionData;
     action = {
       type: ADD_POTION,
       name: name,
@@ -47,8 +45,7 @@ describe('potionListReducer', () => {
         effect: effect,
         pints: pints,
         price: price,
-        id: id
-      }
+        id: id }
     });
   });
 });
